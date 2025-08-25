@@ -1,0 +1,25 @@
+export const API_ROOT="http://localhost:8080"
+//apibussiness
+export const API_ROUTES = {
+  LOGIN: `${API_ROOT}/api/auth/login`,
+  BUSSINESS_CATEGORY: `${API_ROOT}/api/danhmuc`,
+  BUSSINESS_THONGSO: `${API_ROOT}/api/thongso`,
+  BUSSINESS_THUONGHIEU: `${API_ROOT}/api/thuonghieu`,
+  BUSSINESS_SANPHAM: `${API_ROOT}/api/sanpham`,
+  BUSSINESS_THONGSOCUTHE: `${API_ROOT}/api/thongsocuthe`,
+  BUSSINESS_DONVICUNGCAP: `${API_ROOT}/api/donvicungcap`,
+  BUSSINESS_PHIEUNHAP: `${API_ROOT}/api/phieunhap`,
+  BUSSINESS_FLASHSALE: `${API_ROOT}/api/flashsale`,
+  BUSSINESS_DEAL: `${API_ROOT}/api/deal`,
+  BUSSINESS_BONUS: `${API_ROOT}/api/bonus`,
+  BUSSINESS_COMMENT: `${API_ROOT}/api/comment`,
+  BUSSINESS_ORDER: `${API_ROOT}/api/hoadononline`,
+  BUSSINESS_ORDERTAIQUAY: `${API_ROOT}/api/hoadontaiquay`,
+  BUSSINESS_STATUS: `${API_ROOT}/api/trangthai`,
+  BUSSINESS_TRUYCAP: `${API_ROOT}/api/truycap`,
+  BUSSINESS_HINHTHUCTHANHTOAN: `${API_ROOT}/api/hinhthucthanhtoan`,
+    BUSSINESS_NGUOIDUNG: `${API_ROOT}/api/nguoidung`,
+     BUSSINESS_TINNHAN: `${API_ROOT}/api/tinnhan`,
+     BUSSINESS_PHIEUKIEM: `${API_ROOT}/api/phieukiemhang`,
+     BUSSINESS_QUYCACHNHAPHANG: `${API_ROOT}/api/donggoichan`,
+};
