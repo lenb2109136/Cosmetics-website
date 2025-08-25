@@ -13,6 +13,7 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.util.RouteMatcher.Route;
 
+import com.example.e_commerce.constants.Role;
 import com.example.e_commerce.constants.Routes;
 
 @Configuration
@@ -45,14 +46,15 @@ public class SecurityEndpoint {
 	    httpSecurity
 	        .securityMatcher(Routes.API + "/**")
 	        .authorizeHttpRequests(auth -> auth
-//	        	.requestMatchers(Routes.API + "/sanpham").authenticated()
-	        	.requestMatchers(Routes.API + "/comment").authenticated()
-	        	.requestMatchers(Routes.API + "/thongso").authenticated()
-	        	.requestMatchers(Routes.API + "/thuonghieu").authenticated()
-	        	.requestMatchers(Routes.API + "/hoadononline").authenticated()
-	        	.requestMatchers(Routes.API + "/phieunhap").authenticated()
-	        	.requestMatchers(Routes.API + "/thuonghieu").authenticated()
-	        	.requestMatchers(Routes.API + "/pushnotifycation").authenticated()
+	        	.requestMatchers(Routes.API + "/sanpham").hasAuthority(Role.ADMIN+ " "+ Role.CUSTOMER + " "+ Role.EMPLOYEE)
+	   
+	        	.requestMatchers(Routes.API + "/comment").hasAuthority(Role.CUSTOMER+"")
+	        	.requestMatchers(Routes.API + "/thongso").hasAuthority(Role.ADMIN+" "+Role.CUSTOMER)
+	        	.requestMatchers(Routes.API + "/thuonghieu").hasAuthority(Role.ADMIN+" "+Role.CUSTOMER)
+	        	.requestMatchers(Routes.API + "/hoadononline").hasAuthority(Role.ADMIN+"")
+	        	.requestMatchers(Routes.API + "/phieunhap").hasAuthority(Role.ADMIN+""+Role.EMPLOYEE)
+	        	.requestMatchers(Routes.API + "/thuonghieu").hasAuthority(Role.ADMIN+" "+Role.CUSTOMER)
+	        	.requestMatchers(Routes.API + "/pushnotifycation").hasAuthority(Role.EMPLOYEE+"")
 	            .anyRequest().permitAll()
 	        )
 	        .csrf(csrf -> csrf.disable())
